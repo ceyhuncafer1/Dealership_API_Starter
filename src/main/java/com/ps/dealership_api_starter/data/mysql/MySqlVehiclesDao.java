@@ -23,8 +23,7 @@ public class MySqlVehiclesDao extends MySqlDaoBase implements VehiclesDao {
     }
 
     @Override
-    public List<Vehicle> search(double minPrice, double maxPrice, String make, String model, int minYear, int maxYear,
-                                String color, int minMiles, int maxMiles, String type) {
+    public List<Vehicle> search(double minPrice, double maxPrice, String make, String model, int minYear, int maxYear, String color, int minMiles, int maxMiles, String type) {
 
         List<Vehicle> vehicles = new ArrayList<>();
 
