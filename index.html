@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    fetch("http://localhost:8080/dealerships")
+        .then(res=>res.json())
+        .then(data=>{
+            data.forEach(dealership => {
+                const dealershipDiv = document.createElement('div');
+                dealershipDiv.classList.add('dealership');
+
+                const name = document.createElement('h2');
+                name.textContent = dealership.name;
+                dealershipDiv.appendChild(name);
+
+                const address = document.createElement('p');
+                address.textContent = `Address: ${dealership.address}`;
+                dealershipDiv.appendChild(address);
+
+                const phone = document.createElement('p');
+                phone.textContent = `Phone: ${dealership.phone}`;
+                dealershipDiv.appendChild(phone);
+
+                document.body.appendChild(dealershipDiv);
+            });
+        });
+</script>
+
+</body>
+</html>
